@@ -1568,6 +1568,7 @@ let g:airline_section_y = 'B:%{bufnr("%")} W:%{winnr()}'
 " let g:airline_section_warning = airline#section#create(['ale'])
 let g:airline#extensions#whitespace#checks = ['trailing']
 let g:airline_extensions = ['branch', 'gutentags', 'whitespace', 'tabline', 'ale', 'languageclient']
+let g:airline_symbols = {'colnr': ' ℅:'}
 " }
 
 " util {
