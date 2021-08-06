@@ -1511,7 +1511,7 @@ sign define OmniSharpCodeActions text=💡
 
 " lsp {
 let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['stack' ,"exec", "--", "haskell-language-server-wrapper"],
+    \ 'haskell': ['stack' ,"exec", "--", "haskell-language-server-wrapper","--lsp"],
     \ }
 " let g:LanguageClient_devel = 1 " Use rust debug build
 
