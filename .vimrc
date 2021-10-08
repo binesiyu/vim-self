@@ -1037,7 +1037,7 @@ nnoremap <leader>fr :<C-U><C-R>=printf("Leaderf file --input %s","<C-R>*")<CR><C
 
 "asynctask {
 let g:asynctasks_extra_config = [
-    \ '~/.vim/.tasks',
+    \ '~/.config/nvim/tasks/local_tasks.ini',
     \ ]
 " }
 " set vfile=/Users/yubin/vfile.txt
@@ -1511,7 +1511,7 @@ sign define OmniSharpCodeActions text=💡
 
 " lsp {
 let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['stack' ,"exec", "--", "hie-wrapper"],
+    \ 'haskell': ['stack' ,"exec", "--", "haskell-language-server-wrapper","--lsp"],
     \ }
 " let g:LanguageClient_devel = 1 " Use rust debug build
 
