@@ -259,6 +259,7 @@ Plugin 'skywind3000/vim-preview'
 Plugin 'binesiyu/exvim',{'merged' : 0}
 Plugin 'binesiyu/vim-aftercolor'
 Plugin 'leafo/moonscript-vim'
+Plugin 'kalvinpearce/ShaderHighlight'
 
 " Plugin 'zchee/vim-flatbuffers',{'merged' : 0}
 
