@@ -3,7 +3,7 @@ let mapleader=','
 """ Plugins  --------------------------------
 set surround
 " set multiple-cursors
-set commentary
+" set commentary
 set argtextobj
 set easymotion
 set textobj-entire
@@ -25,7 +25,7 @@ set smartcase
 set showmode
 " set number
 set relativenumber
-set scrolloff=5
+set scrolloff=3
 set history=100000
 set clipboard=unnamed
 set timeoutlen=5000
@@ -35,7 +35,11 @@ nnoremap ; :
 vnoremap ; :
 
 " nnoremap <Leader>h *
-noremap <Leader>h :action HighlightUsagesInFile<CR>
+" noremap <Leader>h :action HighlightUsagesInFile<CR>
+noremap <leader>h *N
+" noremap <leader>h "/yiw:set hls<CR>
+nmap <leader>n *
+nmap <leader>N #
 
 map <C-k> <Action>(EditorSelectWord)
 
@@ -115,8 +119,11 @@ nnoremap <C-l> <C-W>l
 
 " project search
 nnoremap <Leader>ps :action SearchEverywhere<CR>
+nnoremap <C-p> :action GotoFile<CR>
 nnoremap <Leader>pf :action GotoFile<CR>
+nnoremap <Leader>po :action OptimizeImports<CR>
 nnoremap <Leader>pm :action ShowPopupMenu<CR>
+nnoremap <Leader>o :action GotoFile<CR>
 
 " find or file"
 nnoremap <C-s> :w<CR>
@@ -126,6 +133,7 @@ nnoremap <Leader>ff :action GotoFile<CR>
 nnoremap <Leader>fm :action FileStructurePopup<CR>
 nnoremap <Leader>fu :action FindUsages<CR>
 nnoremap <Leader>fp :action ShowFilePath<CR>
+nnoremap <Leader>fw :action Find<CR>
 
 " Tab operation
 nnoremap <Leader>tn gt
@@ -141,9 +149,10 @@ vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
 " ==================================================
 
 " built in search looks better
-noremap / :action Find<CR>
+" noremap / :action Find<CR>
 " but preserve ideavim search
-noremap <Leader>/ /
+" noremap <Leader>/ :action Find<CR>
+noremap <Leader>/ :set nohlsearch<CR>
 
 " nnoremap <Leader>;; :action CommentByLineComment<CR>
 noremap gcc :action CommentByLineComment<CR>
@@ -167,8 +176,6 @@ nnoremap <Leader>gn :action ShowNavBar<CR>
 nnoremap <Leader>ic :action InspectCode<CR>
 
 nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
-
-nnoremap <Leader>oi :action OptimizeImports<CR>
 
 nnoremap <Leader>rc :action RunToCursor<CR>
 nnoremap <Leader>rC :action ChooseRunConfiguration<CR>
