@@ -179,6 +179,12 @@ nnoremap gwb :action ViewBreakpoints<CR>
 nnoremap gwp :action ActivateProjectToolWindow<CR>
 nnoremap gwf :action ActivateFindToolWindow<CR>
 
+nnoremap gwh :action StretchSplitToLeft<CR>
+nnoremap gwl :action StretchSplitToRight<CR>
+nnoremap gwk :action StretchSplitToDown<CR>
+nnoremap gwj :action StretchSplitToTop<CR>
+nnoremap gww :action ChangeSplitOrientation<CR>
+
 nmap <Leader>1 <Action>(GoToTab1)
 nmap <Leader>2 <Action>(GoToTab2)
 nmap <Leader>3 <Action>(GoToTab3)
