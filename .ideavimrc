@@ -12,9 +12,11 @@ set NERDTree
 set exchange
 set textobj-indent
 " set matchit
+" set which-key
 
 """ Idea specific settings ------------------
- set ideamarks
+" set ideamarks
+" set ideavimsupport=dialog,singleline
 
 """ vim settings ------------------
 set hlsearch
@@ -46,6 +48,8 @@ map <Leader>h *N
 nmap <Leader>n *
 nmap <Leader>N #
 
+nmap grr griw
+
 "visual 模式 下 按* 号 搜索 光标选中的内容(对已选中的内容进行查找)
 vmap * "ry/<C-R>r<CR>
 
@@ -60,16 +64,14 @@ vnoremap > >gv
 
 map == <Action>(ReformatCode)
 
-"normal模式 下的 快捷键
-noremap K :action EditorSelectWord<CR>
-nmap <C-k> K
 
 "vim 的 R 好像 一点 都没用呀……  替换 之 ……
 noremap R :action HideAllWindows<CR>
 
 " enter newlines
-nnoremap <CR> :action EditorEnter<CR>
+" nnoremap <CR> :action EditorEnter<CR>
 " inoremap <CR> <C-o>:action EditorEnter<CR>
+noremap <CR> :action EditorSelectWord<CR>
 
 " previous/next
 noremap [[ <ESC>:action MethodUp<CR>
@@ -96,7 +98,6 @@ nnoremap <C-C> <Esc>
 
 " g
 nnoremap ga :action GotoAction<CR>
-" nnoremap gc :action GotoClass<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gf :action GotoFile<CR>
 nnoremap gi :action GotoImplementation<CR>
@@ -176,6 +177,7 @@ nnoremap gwd :action ActivateDebugToolWindow<CR>
 nnoremap gwr :action ActivateRunToolWindow<CR>
 nnoremap gwb :action ViewBreakpoints<CR>
 nnoremap gwp :action ActivateProjectToolWindow<CR>
+nnoremap gwf :action ActivateFindToolWindow<CR>
 
 nmap <Leader>1 <Action>(GoToTab1)
 nmap <Leader>2 <Action>(GoToTab2)
@@ -199,6 +201,7 @@ nnoremap <Leader>fm :action FileStructurePopup<CR>
 nnoremap <Leader>fu :action FindUsages<CR>
 nnoremap <Leader>fp :action ShowFilePath<CR>
 nnoremap <Leader>fw :action Find<CR>
+nnoremap <Leader>fc :action GotoClass<CR>
 " 弹出切换tab
 nnoremap <Leader>fs :action Switcher<CR>
 
