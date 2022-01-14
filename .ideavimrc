@@ -216,7 +216,7 @@ nnoremap <C-s> :w<CR>
 " Tab operation
 nnoremap <Leader>tn gt
 nnoremap <Leader>tp gT
-nnoremap <Leader>tc :action CloseActiveTab<CR>
+nnoremap <Leader>tc :action CloseContent<CR>
 " Terminal
 nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
 vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
@@ -299,7 +299,8 @@ nnoremap <Leader>lu :action FindUsages<CR>
 nnoremap <Leader>ll :action RecentLocations<CR>
 nnoremap <Leader>ltr :action RiderUnitTestRunContextAction<CR>
 
-nnoremap <Leader>ic :action InspectCode<CR>
+nnoremap <Leader>i :action HighlightUsagesInFile<CR>
+" nnoremap <Leader>ic :action InspectCode<CR>
 
 nnoremap <Leader>rc :action RunToCursor<CR>
 nnoremap <Leader>rC :action ChooseRunConfiguration<CR>
