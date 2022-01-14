@@ -12,7 +12,6 @@ set NERDTree
 set exchange
 set textobj-indent
 " set matchit
-set which-key
 
 """ Idea specific settings ------------------
  set ideamarks
@@ -59,10 +58,11 @@ nnoremap < <<_
 vnoremap < <gv
 vnoremap > >gv
 
-nmap == <Action>(ReformatCode)
+map == <Action>(ReformatCode)
 
 "normal模式 下的 快捷键
 noremap K :action EditorSelectWord<CR>
+nmap <C-k> K
 
 "vim 的 R 好像 一点 都没用呀……  替换 之 ……
 noremap R :action HideAllWindows<CR>
@@ -71,13 +71,9 @@ noremap R :action HideAllWindows<CR>
 nnoremap <CR> :action EditorEnter<CR>
 " inoremap <CR> <C-o>:action EditorEnter<CR>
 
-map <C-k> <Action>(EditorSelectWord)
-
-" previous method
+" previous/next
 noremap [[ <ESC>:action MethodUp<CR>
-" next method
 noremap ]] <ESC>:action MethodDown<CR>
-
 nnoremap [m :action MethodUp<CR>
 nnoremap ]m :action MethodDown<CR>
 nnoremap [c :action VcsShowPrevChangeMarker<CR>
@@ -98,6 +94,7 @@ nnoremap ]b :bnext<cr>
 
 nnoremap <C-C> <Esc>
 
+" g
 nnoremap ga :action GotoAction<CR>
 " nnoremap gc :action GotoClass<CR>
 nnoremap gd :action GotoDeclaration<CR>
@@ -130,14 +127,6 @@ vmap F <Plug>(easymotion-linebackward)
 nnoremap zC :action CollapseRegionRecursively<CR>
 nnoremap zO :action ExpandRegionRecursively<CR>
 
-" help
-nnoremap <Leader>? :action GotoAction<CR>
-
-" Quit normal mode
-nnoremap <Leader>q  :q<CR>
-nnoremap <Leader>Q  :qa!<CR>
-" quit ==> close current window
-nnoremap <Leader>q <C-W>w
 
 nmap <Space> <C-e>
 nmap <S-Space> <C-y>
@@ -173,26 +162,20 @@ nnoremap <Leader>wu :action Unsplit<CR>
 nnoremap <Leader>wx :action HideAllWindows<CR>
 nnoremap <Leader>wz :action ToggleDistractionFreeMode<CR>
 
-" 调整分屏大小
-" nmap <C-j> <Action>(StretchSplitToBottom)
-" nmap <C-k> <Action>(StretchSplitToTop)
-" nmap <C-h> <Action>(StretchSplitToLeft)
-" nmap <C-l> <Action>(StretchSplitToRight)
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+"nnoremap <C-w>o :<C-u>action CloseAllEditorsButActive<CR>
 
-" windows
-nnoremap gwa :action ActivateAntBuildToolWindow<CR>
+
+
 nnoremap gwm :action ActivateEventLogToolWindow<CR>
 nnoremap gwg :action ActivateGradleToolWindow<CR>
 nnoremap gwd :action ActivateDebugToolWindow<CR>
 nnoremap gwr :action ActivateRunToolWindow<CR>
 nnoremap gwb :action ViewBreakpoints<CR>
 nnoremap gwp :action ActivateProjectToolWindow<CR>
-
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-"nnoremap <C-w>o :<C-u>action CloseAllEditorsButActive<CR>
 
 nmap <Leader>1 <Action>(GoToTab1)
 nmap <Leader>2 <Action>(GoToTab2)
@@ -204,39 +187,37 @@ nmap <Leader>7 <Action>(GoToTab7)
 nmap <Leader>8 <Action>(GoToTab8)
 nmap <Leader>9 <Action>(GoToTab9)
 
-" project search
+" search
 nnoremap <Leader>ps :action SearchEverywhere<CR>
-nnoremap <C-p> :action GotoFile<CR>
-nnoremap <C-S-p> :action GotoClass<CR>
 nnoremap <Leader>pf :action GotoFile<CR>
 nnoremap <Leader>po :action OptimizeImports<CR>
 nnoremap <Leader>pm :action ShowPopupMenu<CR>
-nnoremap <Leader>o :action GotoFile<CR>
 
-" find or file"
-nnoremap <C-s> :w<CR>
 nnoremap <Leader>fb :action RecentFiles<CR>
 nnoremap <Leader>ff :action GotoFile<CR>
 nnoremap <Leader>fm :action FileStructurePopup<CR>
 nnoremap <Leader>fu :action FindUsages<CR>
-nnoremap <Leader>j :action FindUsages<CR>
 nnoremap <Leader>fp :action ShowFilePath<CR>
 nnoremap <Leader>fw :action Find<CR>
 " 弹出切换tab
 nnoremap <Leader>fs :action Switcher<CR>
 
+nnoremap <Leader>o :action GotoFile<CR>
+nnoremap <Leader>j :action FindUsages<CR>
+nnoremap <C-p> :action GotoFile<CR>
+nnoremap <C-S-p> :action GotoClass<CR>
+
+" file
+nnoremap <C-s> :w<CR>
+
 " Tab operation
 nnoremap <Leader>tn gt
 nnoremap <Leader>tp gT
 nnoremap <Leader>tc :action CloseActiveTab<CR>
-nnoremap <Leader>tb :action ToggleLineBreakpoint<CR>
 " Terminal
 nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
 vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
-"===
 "=== 翻译软件
-"===
-" 使用tt,但开translation
 map <Leader>ts <Action>(ShowTranslationDialogAction)
 " nmap tt <Action>(ActivateProjectToolWindow)
 map <Leader>tw <Action>(EditorTranslateAction)
@@ -244,67 +225,63 @@ map <Leader>tw <Action>(EditorTranslateAction)
 " ==================================================
 " Show all the provided actions via `:actionlist`
 " ==================================================
-
-" built in search looks better
-" noremap / :action Find<CR>
-" but preserve ideavim search
-" noremap <Leader>/ :action Find<CR>
+" clear the highlighted search result
 noremap <Leader>/ :set nohlsearch<CR>
 
-" nnoremap <Leader>;; :action CommentByLineComment<CR>
 noremap gcc :action CommentByLineComment<CR>
+noremap gcb :action CommentByBlockComment<CR>
 
 nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
 nnoremap <Leader>br :action ViewBreakpoints<CR>
+nnoremap <Leader>bp :bprevious<CR>
+nnoremap <Leader>bn :bnext<CR>
 
 nnoremap <Leader>cv :action ChangeView<CR>
 nnoremap <Leader>cd :action ChooseDebugConfiguration<CR>
 
+"=== 打断点
+" debug运行
+nmap <Leader>dr <Action>(Debug)
+" debug运行当前类
+nmap <Leader>dc <Action>(DebugClass)
+nmap <Leader>db <Action>(ToggleLineBreakpoint)
+" debug调试
+nmap <Leader>dn <Action>(StepOver)
+nmap <Leader>di <Action>(StepInto)
+nmap <Leader>do <Action>(StepOut)
+nmap <Leader>ds <Action>(Stop)
+" 显示所有断点信息
+nmap <Leader>dm <Action>(ViewBreakpoints)
 
 " extract actions
-nnoremap <leader>ei :action ExtractInterface<CR>
-nnoremap <leader>es :action ExtractSuperclass<CR>
-nnoremap <leader>en :action ExtractClass<CR>
-nnoremap <leader>em :action ExtractMethod<CR>
-vnoremap <leader>em <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractMethod<CR>
-nnoremap <leader>ev :action IntroduceVariable<CR>
-vnoremap <leader>ev <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<CR>
-nnoremap <leader>ef :action IntroduceField<CR>
-vnoremap <leader>ef <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<CR>
-nnoremap <leader>ep :action IntroduceParameter<CR>
-vnoremap <leader>ep <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceParameter<CR>
-nnoremap <leader>ec :action IntroduceConstant<CR>
-vnoremap <leader>ec <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceConstant<CR>
+nnoremap <Leader>ei :action ExtractInterface<CR>
+nnoremap <Leader>es :action ExtractSuperclass<CR>
+nnoremap <Leader>en :action ExtractClass<CR>
+nnoremap <Leader>em :action ExtractMethod<CR>
+vnoremap <Leader>em <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractMethod<CR>
+nnoremap <Leader>ev :action IntroduceVariable<CR>
+vnoremap <Leader>ev <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<CR>
+nnoremap <Leader>ef :action IntroduceField<CR>
+vnoremap <Leader>ef <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<CR>
+nnoremap <Leader>ep :action IntroduceParameter<CR>
+vnoremap <Leader>ep <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceParameter<CR>
+nnoremap <Leader>ec :action IntroduceConstant<CR>
+vnoremap <Leader>ec <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceConstant<CR>
 
-"===
-"=== git
-"===
-" 弹出管理界面
-nmap <leader>gm  <Action>(Vcs.QuickListPopupAction)
-" 提交代码
-nmap <leader>gc  <Action>(CheckinProject)
-" 推送代码
-nmap <leader>gp  <Action>(Vcs.Push)
-" 查看历史版本比较
-nmap <leader>gd  <Action>(Compare.SameVersion)
-" 撤销文件修改
-nmap <leader>gr  <Action>(ChangesView.Revert)
-" 查看文件历史版本
-nmap <leader>gh  <Action>(Vcs.ShowTabbedFileHistory)
-" 查看git的log
-nmap <leader>gl  <Action>(Vcs.Show.Log)
 
 " version control actions
-" nnoremap ]v :action VcsShowNextChangeMarker<CR>
-" nnoremap [v :action VcsShowPrevChangeMarker<CR>
-" nnoremap <leader>vd :action VcsShowCurrentChangeMarker<CR>
-" nnoremap <leader>vr :action Vcs.RollbackChangedLines<CR>
-nnoremap <leader>vu :action Vcs.UpdateProject<CR>
-nnoremap <leader>vp :action Vcs.Push<CR>
-nnoremap <leader>vc :action Vcs.QuickListPopupAction<CR>
-nnoremap <leader>vb :action Git.Branches<CR>
-nnoremap <leader>vv :action ActivateVersionControlToolWindow<CR>
-nnoremap <leader>va :set norelativenumber<CR>:action Annotate<CR>
+nnoremap <Leader>vu :action Vcs.UpdateProject<CR>
+nnoremap <Leader>vp :action Vcs.Push<CR>
+nnoremap <Leader>vc :action Vcs.QuickListPopupAction<CR>
+nnoremap <Leader>vb :action Git.Branches<CR>
+nnoremap <Leader>vv :action ActivateVersionControlToolWindow<CR>
+nnoremap <Leader>va :action Annotate<CR>
+nnoremap <Leader>vl :action Vcs.Show.Log<CR>
+nnoremap <Leader>vm :action Vcs.QuickListPopupAction<CR>
+nnoremap <Leader>vc :action CheckinProject<CR>
+nnoremap <Leader>vd :action Compare.SameVersion<CR>
+nnoremap <Leader>vr :action ChangesView.Revert<CR>
+nnoremap <Leader>vh :action Vcs.ShowTabbedFileHistory<CR>
 
 " Language actions
 nnoremap <Leader>lb :action ToggleLineBreakpoint<CR>
@@ -316,42 +293,40 @@ nnoremap <Leader>lpd :action QuickDeclaration<CR>
 nnoremap <Leader>li :action GotoImplementation<CR>
 nnoremap <Leader>lpi :action QuickImplementation<CR>
 nnoremap <Leader>lu :action FindUsages<CR>
-nnoremap <Leader>lpu :action QuickUsages<CR>
-nnoremap <Leader>l- :action Back<CR>
-nnoremap <Leader>l= :action Forward<CR>
 nnoremap <Leader>ll :action RecentLocations<CR>
 nnoremap <Leader>ltr :action RiderUnitTestRunContextAction<CR>
-nnoremap <Leader><return> :action ShowIntentionActions<CR>
-
-" hide all
-" noremap <Leader>h <ESC>:action HideAllWindows<CR>
 
 nnoremap <Leader>ic :action InspectCode<CR>
-
-nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
 
 nnoremap <Leader>rc :action RunToCursor<CR>
 nnoremap <Leader>rC :action ChooseRunConfiguration<CR>
 nnoremap <Leader>re :action RenameElement<CR>
 nnoremap <Leader>rf :action RenameFile<CR>
 nnoremap <Leader>rr :action Rerun<CR>
+
 " refactoring actions
-nnoremap <leader>ri :action Inline<CR>
-nnoremap <leader>rr :action RenameElement<CR>i
-nnoremap <leader>rj :action MemberPushDown<CR>
-nnoremap <leader>rk :action MemberPullUp<CR>
-nnoremap <leader>rs :action ChangeSignature<CR>
-nnoremap <leader>rd :action SafeDelete<CR>
-nnoremap <leader>rm :action Move<CR>
+nnoremap <Leader>ri :action Inline<CR>
+nnoremap <Leader>rr :action RenameElement<CR>i
+nnoremap <Leader>rj :action MemberPushDown<CR>
+nnoremap <Leader>rk :action MemberPullUp<CR>
+nnoremap <Leader>rs :action ChangeSignature<CR>
+nnoremap <Leader>rd :action SafeDelete<CR>
+nnoremap <Leader>rm :action Move<CR>
 
 nnoremap <Leader>se :action SearchEverywhere<CR>
 nnoremap <Leader>ss :action GotoSymbol<CR>
 nnoremap <Leader>su :action ShowUsages<CR>
-nnoremap <Leader>si :action StepInto<CR>
 
-" clear the highlighted search result
-nnoremap <Leader>sc :nohlsearch<CR>
 nnoremap <Leader>so :source ~/.ideavimrc<CR>
+
+" help
+nnoremap <Leader>? :action GotoAction<CR>
+
+" Quit normal mode
+nnoremap <Leader>q  :q<CR>
+nnoremap <Leader>Q  :qa!<CR>
+" quit ==> close current window
+nnoremap <Leader>q <C-W>w
 
 nmap <Leader>yf <Action>(CopyPaths)
 nmap <Leader>yn <Action>(CopyReference)
@@ -391,7 +366,6 @@ nmap mm <Action>(ToggleBookmark)
 nmap ma <Action>(ShowBookmarks)
 " 编辑书签
 nmap m; <Action>(Bookmarks)
-
 
 nmap 'a <Action>(GotoBookmarkA)
 nmap 'b <Action>(GotoBookmarkB)
@@ -446,23 +420,6 @@ nmap mw  <Action>(ToggleBookmarkW)
 nmap mx  <Action>(ToggleBookmarkX)
 nmap my  <Action>(ToggleBookmarkY)
 nmap mz  <Action>(ToggleBookmarkZ)
-
-"===
-"=== 打断点
-"===
-" debug运行
-nmap <Leader>dr <Action>(Debug)
-" debug运行当前类
-nmap <Leader>dc <Action>(DebugClass)
-nmap <Leader>db <Action>(ToggleLineBreakpoint)
-" debug调试
-" noremap N <Action>(Resume)
-nmap <Leader>dn <Action>(StepOver)
-nmap <Leader>di <Action>(StepInto)
-nmap <Leader>do <Action>(StepOut)
-nmap <Leader>ds <Action>(Stop)
-" 显示所有断点信息
-nmap <Leader>dm <Action>(ViewBreakpoints)
 
 " Plugins to also install:
 " 1. IdeaVim
