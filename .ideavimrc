@@ -271,6 +271,9 @@ vnoremap <Leader>ep <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections
 nnoremap <Leader>ec :action IntroduceConstant<CR>
 vnoremap <Leader>ec <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceConstant<CR>
 
+" error
+nnoremap <Leader>ee :action ShowErrorDescription<CR>
+
 
 " version control actions
 nnoremap <Leader>vu :action Vcs.UpdateProject<CR>
