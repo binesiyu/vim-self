@@ -1,0 +1,442 @@
+let mapleader=','
+
+""" Plugins  --------------------------------
+set surround
+" set multiple-cursors
+" set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set NERDTree
+set exchange
+set textobj-indent
+" set matchit
+" set which-key
+
+""" Idea specific settings ------------------
+" set ideamarks
+" set ideavimsupport=dialog,singleline
+
+""" vim settings ------------------
+set hlsearch
+set incsearch
+" 搜索时智能匹配大小写
+set ignorecase
+set smartcase
+set showmode
+" set number
+set relativenumber
+set scrolloff=3
+set history=100000
+set clipboard=unnamed,unnamedplus
+" Enable native idea paste action for put operations
+set clipboard+=ideaput
+" disable the timeout option
+set notimeout
+"set timeoutlen=5000
+set visualbell
+set noerrorbells
+
+nnoremap ; :
+vnoremap ; :
+
+" nnoremap <Leader>h *
+" noremap <Leader>h :action HighlightUsagesInFile<CR>
+map <Leader>h *N
+" noremap <Leader>h "/yiw:set hls<CR>
+nmap <Leader>n *
+nmap <Leader>N #
+
+nmap grr griw
+
+"visual 模式 下 按* 号 搜索 光标选中的内容(对已选中的内容进行查找)
+vmap * "ry/<C-R>r<CR>
+
+noremap <C-O> <ESC>:action Back<CR>
+noremap <C-I> <ESC>:action Forward<CR>
+
+nnoremap > >>_
+nnoremap < <<_
+" enhance '<' '>' , do not need to reselect the block after shift it.
+vnoremap < <gv
+vnoremap > >gv
+
+map == <Action>(ReformatCode)
+
+
+"vim 的 R 好像 一点 都没用呀……  替换 之 ……
+noremap R :action HideAllWindows<CR>
+
+" enter newlines
+" nnoremap <CR> :action EditorEnter<CR>
+" inoremap <CR> <C-o>:action EditorEnter<CR>
+noremap <CR> :action EditorSelectWord<CR>
+
+" previous/next
+noremap [[ <ESC>:action MethodUp<CR>
+noremap ]] <ESC>:action MethodDown<CR>
+nnoremap [m :action MethodUp<CR>
+nnoremap ]m :action MethodDown<CR>
+nnoremap [c :action VcsShowPrevChangeMarker<CR>
+nnoremap ]c :action VcsShowNextChangeMarker<CR>
+nnoremap [e :<C-u>action GotoPreviousError<CR>
+nnoremap ]e :<C-u>action GotoNextError<CR>
+nnoremap [<space> 	O<esc>j
+nnoremap ]<space> 	o<esc>k
+nnoremap [q 		:action PreviousOccurence<cr>
+nnoremap ]q 		:action NextOccurence<cr>
+nnoremap ]n   		:action FindNext<cr>
+nnoremap [n   		:action FindPrevious<cr>
+nnoremap ]p 		:action NextParameter<cr>
+nnoremap [p 		:action PrevParameter<cr>
+" 切换前后buffer
+nnoremap [b :bprevious<cr>
+nnoremap ]b :bnext<cr>
+
+nnoremap <C-C> <Esc>
+
+" g
+nnoremap ga :action GotoAction<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSymbol<CR>
+
+" easymotion
+nmap t <Plug>(easymotion-prefix)
+nmap tt <Plug>(easymotion-sn)
+nmap tj <Plug>(easymotion-j)
+nmap tk <Plug>(easymotion-k)
+nmap tl <Plug>(easymotion-lineforward)
+nmap th <Plug>(easymotion-linebackward)
+" nmap t. <Plug>(easymotion-repeat)
+vmap t <Plug>(easymotion-prefix)
+vmap tt <Plug>(easymotion-sn)
+vmap tj <Plug>(easymotion-j)
+vmap tk <Plug>(easymotion-k)
+vmap tl <Plug>(easymotion-lineforward)
+vmap th <Plug>(easymotion-linebackward)
+" vmap t. <Plug>(easymotion-repeat)
+
+nmap f <Plug>(easymotion-lineforward)
+nmap F <Plug>(easymotion-linebackward)
+vmap f <Plug>(easymotion-lineforward)
+vmap F <Plug>(easymotion-linebackward)
+
+" 代码折叠自定义快捷键
+nnoremap zC :action CollapseRegionRecursively<CR>
+nnoremap zO :action ExpandRegionRecursively<CR>
+
+
+nmap <Space> <C-e>
+nmap <S-Space> <C-y>
+
+" Quit visual mode
+vnoremap v <Esc>
+
+" Move to the start of line
+nnoremap H ^
+
+" Move to the end of line
+nnoremap L $
+
+" Redo
+nnoremap U <C-r>
+
+" Yank to the end of line
+nnoremap Y y$
+
+" Window operation
+nnoremap <Leader>ww <C-W>w
+nnoremap <Leader>wd <C-W>c
+nnoremap <Leader>wj <C-W>j
+nnoremap <Leader>wk <C-W>k
+nnoremap <Leader>wh <C-W>h
+nnoremap <Leader>wl <C-W>l
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>w- <C-W>s
+nnoremap <Leader>wv <C-W>v
+nnoremap <Leader>w\| <C-W>v
+nnoremap <Leader>wt :action ActivateTerminalToolWindow<CR>
+nnoremap <Leader>wu :action Unsplit<CR>
+nnoremap <Leader>wx :action HideAllWindows<CR>
+nnoremap <Leader>wz :action ToggleDistractionFreeMode<CR>
+
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+"nnoremap <C-w>o :<C-u>action CloseAllEditorsButActive<CR>
+
+
+
+nnoremap gwm :action ActivateEventLogToolWindow<CR>
+nnoremap gwg :action ActivateGradleToolWindow<CR>
+nnoremap gwd :action ActivateDebugToolWindow<CR>
+nnoremap gwr :action ActivateRunToolWindow<CR>
+nnoremap gwb :action ViewBreakpoints<CR>
+nnoremap gwp :action ActivateProjectToolWindow<CR>
+nnoremap gwf :action ActivateFindToolWindow<CR>
+
+nnoremap gwh :action StretchSplitToLeft<CR>
+nnoremap gwl :action StretchSplitToRight<CR>
+nnoremap gwk :action StretchSplitToDown<CR>
+nnoremap gwj :action StretchSplitToTop<CR>
+nnoremap gww :action ChangeSplitOrientation<CR>
+
+nmap <Leader>1 <Action>(GoToTab1)
+nmap <Leader>2 <Action>(GoToTab2)
+nmap <Leader>3 <Action>(GoToTab3)
+nmap <Leader>4 <Action>(GoToTab4)
+nmap <Leader>5 <Action>(GoToTab5)
+nmap <Leader>6 <Action>(GoToTab6)
+nmap <Leader>7 <Action>(GoToTab7)
+nmap <Leader>8 <Action>(GoToTab8)
+nmap <Leader>9 <Action>(GoToTab9)
+
+" search
+nnoremap <Leader>ps :action SearchEverywhere<CR>
+nnoremap <Leader>pf :action GotoFile<CR>
+nnoremap <Leader>po :action OptimizeImports<CR>
+nnoremap <Leader>pm :action ShowPopupMenu<CR>
+
+nnoremap <Leader>fb :action RecentFiles<CR>
+nnoremap <Leader>ff :action GotoFile<CR>
+nnoremap <Leader>fm :action FileStructurePopup<CR>
+nnoremap <Leader>fu :action FindUsages<CR>
+nnoremap <Leader>fp :action ShowFilePath<CR>
+nnoremap <Leader>fw :action Find<CR>
+nnoremap <Leader>fc :action GotoClass<CR>
+" 弹出切换tab
+nnoremap <Leader>fs :action Switcher<CR>
+
+nnoremap <Leader>o :action GotoFile<CR>
+nnoremap <Leader>j :action FindUsages<CR>
+nnoremap <C-p> :action GotoFile<CR>
+nnoremap <C-S-p> :action GotoClass<CR>
+
+" file
+nnoremap <C-s> :w<CR>
+
+" Tab operation
+nnoremap <Leader>tn gt
+nnoremap <Leader>tp gT
+nnoremap <Leader>tc :action CloseContent<CR>
+" Terminal
+nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
+vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+"=== 翻译软件
+map <Leader>ts <Action>(ShowTranslationDialogAction)
+" nmap tt <Action>(ActivateProjectToolWindow)
+map <Leader>tw <Action>(EditorTranslateAction)
+
+" ==================================================
+" Show all the provided actions via `:actionlist`
+" ==================================================
+" clear the highlighted search result
+noremap <Leader>/ :set nohlsearch<CR>
+
+noremap gcc :action CommentByLineComment<CR>
+noremap gcb :action CommentByBlockComment<CR>
+
+nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>br :action ViewBreakpoints<CR>
+nnoremap <Leader>bp :bprevious<CR>
+nnoremap <Leader>bn :bnext<CR>
+
+nnoremap <Leader>cv :action ChangeView<CR>
+nnoremap <Leader>cd :action ChooseDebugConfiguration<CR>
+
+"=== 打断点
+" debug运行
+nmap <Leader>dr <Action>(Debug)
+" debug运行当前类
+nmap <Leader>dc <Action>(DebugClass)
+nmap <Leader>db <Action>(ToggleLineBreakpoint)
+" debug调试
+nmap <Leader>dn <Action>(StepOver)
+nmap <Leader>di <Action>(StepInto)
+nmap <Leader>do <Action>(StepOut)
+nmap <Leader>ds <Action>(Stop)
+" 显示所有断点信息
+nmap <Leader>dm <Action>(ViewBreakpoints)
+
+" extract actions
+nnoremap <Leader>ei :action ExtractInterface<CR>
+nnoremap <Leader>es :action ExtractSuperclass<CR>
+nnoremap <Leader>en :action ExtractClass<CR>
+nnoremap <Leader>em :action ExtractMethod<CR>
+vnoremap <Leader>em <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractMethod<CR>
+nnoremap <Leader>ev :action IntroduceVariable<CR>
+vnoremap <Leader>ev <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<CR>
+nnoremap <Leader>ef :action IntroduceField<CR>
+vnoremap <Leader>ef <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<CR>
+nnoremap <Leader>ep :action IntroduceParameter<CR>
+vnoremap <Leader>ep <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceParameter<CR>
+nnoremap <Leader>ec :action IntroduceConstant<CR>
+vnoremap <Leader>ec <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceConstant<CR>
+
+" error
+nnoremap <Leader>ee :action ShowErrorDescription<CR>
+
+
+" version control actions
+nnoremap <Leader>vu :action Vcs.UpdateProject<CR>
+nnoremap <Leader>vp :action Vcs.Push<CR>
+nnoremap <Leader>vc :action Vcs.QuickListPopupAction<CR>
+nnoremap <Leader>vb :action Git.Branches<CR>
+nnoremap <Leader>vv :action ActivateVersionControlToolWindow<CR>
+nnoremap <Leader>va :action Annotate<CR>
+nnoremap <Leader>vl :action Vcs.Show.Log<CR>
+nnoremap <Leader>vm :action Vcs.QuickListPopupAction<CR>
+nnoremap <Leader>vc :action CheckinProject<CR>
+nnoremap <Leader>vd :action Compare.SameVersion<CR>
+nnoremap <Leader>vr :action ChangesView.Revert<CR>
+nnoremap <Leader>vh :action Vcs.ShowTabbedFileHistory<CR>
+
+" Language actions
+nnoremap <Leader>lb :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>l/ :action CommentByLineComment<CR>
+nnoremap <Leader>lrp :action Refactorings.QuickListPopupAction<CR>
+nnoremap <Leader>lr=  :action ReformatCode<CR>
+nnoremap <Leader>ld :action GotoDeclaration<CR>
+nnoremap <Leader>lpd :action QuickDeclaration<CR>
+nnoremap <Leader>li :action GotoImplementation<CR>
+nnoremap <Leader>lpi :action QuickImplementation<CR>
+nnoremap <Leader>lu :action FindUsages<CR>
+nnoremap <Leader>ll :action RecentLocations<CR>
+nnoremap <Leader>ltr :action RiderUnitTestRunContextAction<CR>
+
+nnoremap <Leader>i :action HighlightUsagesInFile<CR>
+" nnoremap <Leader>ic :action InspectCode<CR>
+
+nnoremap <Leader>rc :action RunToCursor<CR>
+nnoremap <Leader>rC :action ChooseRunConfiguration<CR>
+nnoremap <Leader>re :action RenameElement<CR>
+nnoremap <Leader>rf :action RenameFile<CR>
+nnoremap <Leader>rr :action Rerun<CR>
+
+" refactoring actions
+nnoremap <Leader>ri :action Inline<CR>
+nnoremap <Leader>rr :action RenameElement<CR>i
+nnoremap <Leader>rj :action MemberPushDown<CR>
+nnoremap <Leader>rk :action MemberPullUp<CR>
+nnoremap <Leader>rs :action ChangeSignature<CR>
+nnoremap <Leader>rd :action SafeDelete<CR>
+nnoremap <Leader>rm :action Move<CR>
+
+nnoremap <Leader>se :action SearchEverywhere<CR>
+nnoremap <Leader>ss :action GotoSymbol<CR>
+nnoremap <Leader>su :action ShowUsages<CR>
+
+nnoremap <Leader>so :source ~/.ideavimrc<CR>
+
+" help
+nnoremap <Leader>? :action GotoAction<CR>
+
+" Quit normal mode
+nnoremap <Leader>q  :q<CR>
+nnoremap <Leader>Q  :qa!<CR>
+" quit ==> close current window
+nnoremap <Leader>q <C-W>w
+
+nmap <Leader>yf <Action>(CopyPaths)
+nmap <Leader>yn <Action>(CopyReference)
+
+nnoremap <Leader>fx :NERDTreeFind<CR>
+" nnoremap <Leader>nn :NERDTreeFocus<CR>
+nnoremap <Leader>x :NERDTreeToggle<CR>
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+" Quit insert mode
+" inoremap jj <Esc>
+" inoremap jk <Esc>
+" inoremap kk <Esc>
+
+" Command
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-d> <Del>
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+
+"===
+"=== 书签管理
+"===
+nmap mm <Action>(ToggleBookmark)
+" 显示所书签
+nmap ma <Action>(ShowBookmarks)
+" 编辑书签
+nmap m; <Action>(Bookmarks)
+
+nmap 'a <Action>(GotoBookmarkA)
+nmap 'b <Action>(GotoBookmarkB)
+nmap 'c <Action>(GotoBookmarkC)
+nmap 'd <Action>(GotoBookmarkD)
+nmap 'e <Action>(GotoBookmarkE)
+nmap 'f <Action>(GotoBookmarkF)
+nmap 'g <Action>(GotoBookmarkG)
+nmap 'h <Action>(GotoBookmarkH)
+nmap 'i <Action>(GotoBookmarkI)
+nmap 'j <Action>(GotoBookmarkJ)
+nmap 'k <Action>(GotoBookmarkK)
+nmap 'l <Action>(GotoBookmarkL)
+nmap 'm <Action>(GotoBookmarkM)
+nmap 'n <Action>(GotoBookmarkN)
+nmap 'o <Action>(GotoBookmarkO)
+nmap 'p <Action>(GotoBookmarkP)
+nmap 'q <Action>(GotoBookmarkQ)
+nmap 'r <Action>(GotoBookmarkR)
+nmap 's <Action>(GotoBookmarkS)
+nmap 't <Action>(GotoBookmarkT)
+nmap 'u <Action>(GotoBookmarkU)
+nmap 'v <Action>(GotoBookmarkV)
+nmap 'w <Action>(GotoBookmarkW)
+nmap 'x <Action>(GotoBookmarkX)
+nmap 'y <Action>(GotoBookmarkY)
+nmap 'z <Action>(GotoBookmarkZ)
+
+"nmap ma  <Action>(ToggleBookmarkA)
+nmap mb  <Action>(ToggleBookmarkB)
+nmap mc  <Action>(ToggleBookmarkC)
+nmap md  <Action>(ToggleBookmarkD)
+nmap me  <Action>(ToggleBookmarkE)
+nmap mf  <Action>(ToggleBookmarkF)
+nmap mg  <Action>(ToggleBookmarkG)
+nmap mh  <Action>(ToggleBookmarkH)
+nmap mi  <Action>(ToggleBookmarkI)
+nmap mj  <Action>(ToggleBookmarkJ)
+nmap mk  <Action>(ToggleBookmarkK)
+nmap ml  <Action>(ToggleBookmarkL)
+"nmap mm  <Action>(ToggleBookmarkM)
+nmap mn  <Action>(ToggleBookmarkN)
+nmap mo  <Action>(ToggleBookmarkO)
+nmap mp  <Action>(ToggleBookmarkP)
+nmap mq  <Action>(ToggleBookmarkQ)
+nmap mr  <Action>(ToggleBookmarkR)
+nmap ms  <Action>(ToggleBookmarkS)
+nmap mt  <Action>(ToggleBookmarkT)
+nmap mu  <Action>(ToggleBookmarkU)
+nmap mv  <Action>(ToggleBookmarkV)
+nmap mw  <Action>(ToggleBookmarkW)
+nmap mx  <Action>(ToggleBookmarkX)
+nmap my  <Action>(ToggleBookmarkY)
+nmap mz  <Action>(ToggleBookmarkZ)
+
+" Plugins to also install:
+" 1. IdeaVim
+" 2. AceJump
+" 3. IdeaVim-EasyMotion
+" 4. Rainbow Brackets
+" 5. Solarized Themes
