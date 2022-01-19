@@ -36,7 +36,7 @@ set clipboard+=ideaput
 set notimeout
 "set timeoutlen=5000
 set visualbell
-set noerrorbells
+" set noerrorbells
 
 nnoremap ; :
 vnoremap ; :
@@ -53,8 +53,8 @@ nmap grr griw
 "visual 模式 下 按* 号 搜索 光标选中的内容(对已选中的内容进行查找)
 vmap * "ry/<C-R>r<CR>
 
-noremap <C-O> <ESC>:action Back<CR>
-noremap <C-I> <ESC>:action Forward<CR>
+map <C-O> <Action>(Back)
+map <C-I> <Action>(Forward)
 
 nnoremap > >>_
 nnoremap < <<_
@@ -185,15 +185,15 @@ nnoremap gwk :action StretchSplitToDown<CR>
 nnoremap gwj :action StretchSplitToTop<CR>
 nnoremap gww :action ChangeSplitOrientation<CR>
 
-nmap <Leader>1 <Action>(GoToTab1)
-nmap <Leader>2 <Action>(GoToTab2)
-nmap <Leader>3 <Action>(GoToTab3)
-nmap <Leader>4 <Action>(GoToTab4)
-nmap <Leader>5 <Action>(GoToTab5)
-nmap <Leader>6 <Action>(GoToTab6)
-nmap <Leader>7 <Action>(GoToTab7)
-nmap <Leader>8 <Action>(GoToTab8)
-nmap <Leader>9 <Action>(GoToTab9)
+nmap <Leader>t1 <Action>(GoToTab1)
+nmap <Leader>t2 <Action>(GoToTab2)
+nmap <Leader>t3 <Action>(GoToTab3)
+nmap <Leader>t4 <Action>(GoToTab4)
+nmap <Leader>t5 <Action>(GoToTab5)
+nmap <Leader>t6 <Action>(GoToTab6)
+nmap <Leader>t7 <Action>(GoToTab7)
+nmap <Leader>t8 <Action>(GoToTab8)
+nmap <Leader>t9 <Action>(GoToTab9)
 
 " search
 nnoremap <Leader>ps :action SearchEverywhere<CR>
