@@ -179,6 +179,7 @@ nnoremap gwb :action ViewBreakpoints<CR>
 nnoremap gwp :action ActivateProjectToolWindow<CR>
 nnoremap gwf :action ActivateFindToolWindow<CR>
 nnoremap <Leader>gs :action ActivateFindToolWindow<CR>
+nnoremap <Leader>gi :action ActivateFindToolWindow<CR>
 
 nnoremap gwh :action StretchSplitToLeft<CR>
 nnoremap gwl :action StretchSplitToRight<CR>
@@ -337,7 +338,9 @@ nnoremap <Leader>rd :action SafeDelete<CR>
 nnoremap <Leader>rm :action Move<CR>
 
 nnoremap <Leader>se :action SearchEverywhere<CR>
-nnoremap <Leader>ss :action GotoSymbol<CR>
+nnoremap <Leader>ss viw:action GotoSymbol<CR><ESC>
+vnoremap <Leader>ss :action GotoSymbol<CR>
+nnoremap <Leader>st :action GotoSymbol<CR>
 nnoremap <Leader>su :action ShowUsages<CR>
 
 nnoremap <Leader>so :source ~/.ideavimrc<CR>
