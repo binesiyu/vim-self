@@ -3,7 +3,7 @@ let mapleader=','
 """ Plugins  --------------------------------
 set surround
 " set multiple-cursors
-" set commentary
+set commentary
 set argtextobj
 set easymotion
 set textobj-entire
@@ -178,6 +178,7 @@ nnoremap gwr :action ActivateRunToolWindow<CR>
 nnoremap gwb :action ViewBreakpoints<CR>
 nnoremap gwp :action ActivateProjectToolWindow<CR>
 nnoremap gwf :action ActivateFindToolWindow<CR>
+nnoremap <Leader>gs :action ActivateFindToolWindow<CR>
 
 nnoremap gwh :action StretchSplitToLeft<CR>
 nnoremap gwl :action StretchSplitToRight<CR>
@@ -197,7 +198,7 @@ nmap <Leader>t9 <Action>(GoToTab9)
 
 " search
 nnoremap <Leader>ps :action SearchEverywhere<CR>
-nnoremap <Leader>pf :action GotoFile<CR>
+nnoremap <Leader>pf :action FindInPath<CR>
 nnoremap <Leader>po :action OptimizeImports<CR>
 nnoremap <Leader>pm :action ShowPopupMenu<CR>
 
@@ -205,7 +206,8 @@ nnoremap <Leader>fb :action RecentFiles<CR>
 nnoremap <Leader>ff :action GotoFile<CR>
 nnoremap <Leader>fm :action FileStructurePopup<CR>
 nnoremap <Leader>fu :action FindUsages<CR>
-nnoremap <Leader>fp :action ShowFilePath<CR>
+" nnoremap <Leader>fp :action ShowFilePath<CR>
+nnoremap <Leader>fp :action FindInPath<CR>
 nnoremap <Leader>fw :action Find<CR>
 nnoremap <Leader>fc :action GotoClass<CR>
 " 弹出切换tab
@@ -239,6 +241,8 @@ noremap <Leader>/ :set nohlsearch<CR>
 
 noremap gcc :action CommentByLineComment<CR>
 noremap gcb :action CommentByBlockComment<CR>
+map <Leader>cl gcc
+map <Leader>ci gcc
 
 nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
 nnoremap <Leader>br :action ViewBreakpoints<CR>
