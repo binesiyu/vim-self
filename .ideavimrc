@@ -3,7 +3,7 @@ let mapleader=','
 """ Plugins  --------------------------------
 set surround
 " set multiple-cursors
-" set commentary
+set commentary
 set argtextobj
 set easymotion
 set textobj-entire
@@ -36,7 +36,7 @@ set clipboard+=ideaput
 set notimeout
 "set timeoutlen=5000
 set visualbell
-set noerrorbells
+" set noerrorbells
 
 nnoremap ; :
 vnoremap ; :
@@ -53,8 +53,8 @@ nmap grr griw
 "visual 模式 下 按* 号 搜索 光标选中的内容(对已选中的内容进行查找)
 vmap * "ry/<C-R>r<CR>
 
-noremap <C-O> <ESC>:action Back<CR>
-noremap <C-I> <ESC>:action Forward<CR>
+map <C-O> <Action>(Back)
+map <C-I> <Action>(Forward)
 
 nnoremap > >>_
 nnoremap < <<_
@@ -178,6 +178,8 @@ nnoremap gwr :action ActivateRunToolWindow<CR>
 nnoremap gwb :action ViewBreakpoints<CR>
 nnoremap gwp :action ActivateProjectToolWindow<CR>
 nnoremap gwf :action ActivateFindToolWindow<CR>
+nnoremap <Leader>gs :action ActivateFindToolWindow<CR>
+nnoremap <Leader>gi :action ActivateFindToolWindow<CR>
 
 nnoremap gwh :action StretchSplitToLeft<CR>
 nnoremap gwl :action StretchSplitToRight<CR>
@@ -185,36 +187,43 @@ nnoremap gwk :action StretchSplitToDown<CR>
 nnoremap gwj :action StretchSplitToTop<CR>
 nnoremap gww :action ChangeSplitOrientation<CR>
 
-nmap <Leader>1 <Action>(GoToTab1)
-nmap <Leader>2 <Action>(GoToTab2)
-nmap <Leader>3 <Action>(GoToTab3)
-nmap <Leader>4 <Action>(GoToTab4)
-nmap <Leader>5 <Action>(GoToTab5)
-nmap <Leader>6 <Action>(GoToTab6)
-nmap <Leader>7 <Action>(GoToTab7)
-nmap <Leader>8 <Action>(GoToTab8)
-nmap <Leader>9 <Action>(GoToTab9)
+nmap <Leader>t1 <Action>(GoToTab1)
+nmap <Leader>t2 <Action>(GoToTab2)
+nmap <Leader>t3 <Action>(GoToTab3)
+nmap <Leader>t4 <Action>(GoToTab4)
+nmap <Leader>t5 <Action>(GoToTab5)
+nmap <Leader>t6 <Action>(GoToTab6)
+nmap <Leader>t7 <Action>(GoToTab7)
+nmap <Leader>t8 <Action>(GoToTab8)
+nmap <Leader>t9 <Action>(GoToTab9)
 
 " search
-nnoremap <Leader>ps :action SearchEverywhere<CR>
-nnoremap <Leader>pf :action GotoFile<CR>
-nnoremap <Leader>po :action OptimizeImports<CR>
-nnoremap <Leader>pm :action ShowPopupMenu<CR>
+nnoremap <Leader>ps viw:action SearchEverywhere<CR><ESC>
+vnoremap <Leader>ps :action SearchEverywhere<CR>
+nnoremap <Leader>pf viw:action FindInPath<CR><ESC>
+vnoremap <Leader>pf :action FindInPath<CR>
+noremap <Leader>pt :action FindInPath<CR>
+noremap <Leader>po :action OptimizeImports<CR>
+noremap <Leader>pm :action ShowPopupMenu<CR>
 
 nnoremap <Leader>fb :action RecentFiles<CR>
-nnoremap <Leader>ff :action GotoFile<CR>
+nnoremap <Leader>ff viw:action GotoFile<CR><ESC>
+vnoremap <Leader>ff :action GotoFile<CR>
 nnoremap <Leader>fm :action FileStructurePopup<CR>
 nnoremap <Leader>fu :action FindUsages<CR>
-nnoremap <Leader>fp :action ShowFilePath<CR>
-nnoremap <Leader>fw :action Find<CR>
-nnoremap <Leader>fc :action GotoClass<CR>
+" nnoremap <Leader>fp :action ShowFilePath<CR>
+nnoremap <Leader>fp viw:action FindInPath<CR><ESC>
+vnoremap <Leader>fp :action FindInPath<CR>
+noremap <Leader>ft :action FindInPath<CR>
+noremap <Leader>fw :action Find<CR>
+noremap <Leader>fc :action GotoClass<CR>
 " 弹出切换tab
-nnoremap <Leader>fs :action Switcher<CR>
+noremap <Leader>fs :action Switcher<CR>
 
-nnoremap <Leader>o :action GotoFile<CR>
-nnoremap <Leader>j :action FindUsages<CR>
-nnoremap <C-p> :action GotoFile<CR>
-nnoremap <C-S-p> :action GotoClass<CR>
+noremap <Leader>o viw:action GotoFile<CR><ESC>
+noremap <Leader>j :action FindUsages<CR>
+noremap <C-p> :action GotoFile<CR>
+noremap <C-S-p> :action GotoClass<CR>
 
 " file
 nnoremap <C-s> :w<CR>
@@ -239,6 +248,8 @@ noremap <Leader>/ :set nohlsearch<CR>
 
 noremap gcc :action CommentByLineComment<CR>
 noremap gcb :action CommentByBlockComment<CR>
+map <Leader>cl gcc
+map <Leader>ci gcc
 
 nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
 nnoremap <Leader>br :action ViewBreakpoints<CR>
@@ -327,7 +338,9 @@ nnoremap <Leader>rd :action SafeDelete<CR>
 nnoremap <Leader>rm :action Move<CR>
 
 nnoremap <Leader>se :action SearchEverywhere<CR>
-nnoremap <Leader>ss :action GotoSymbol<CR>
+nnoremap <Leader>ss viw:action GotoSymbol<CR><ESC>
+vnoremap <Leader>ss :action GotoSymbol<CR>
+nnoremap <Leader>st :action GotoSymbol<CR>
 nnoremap <Leader>su :action ShowUsages<CR>
 
 nnoremap <Leader>so :source ~/.ideavimrc<CR>
