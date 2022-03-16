@@ -3,7 +3,7 @@ let mapleader=','
 """ Plugins  --------------------------------
 set surround
 " set multiple-cursors
-set commentary
+" set commentary
 set argtextobj
 set easymotion
 set textobj-entire
