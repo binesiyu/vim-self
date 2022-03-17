@@ -55,6 +55,11 @@ vmap * "ry/<C-R>r<CR>
 
 map <C-O> <Action>(Back)
 map <C-I> <Action>(Forward)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
 
 nnoremap > >>_
 nnoremap < <<_
