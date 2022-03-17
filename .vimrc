@@ -199,7 +199,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 " Plugin 'Shougo/neco-syntax'
-Plugin 'autozimu/LanguageClient-neovim',{ 'merged' : 0 ,'on_ft': 'haskell' , 'build': './install.sh' }
+" Plugin 'autozimu/LanguageClient-neovim',{ 'merged' : 0 ,'on_ft': 'haskell' , 'build': './install.sh' }
 
 " colorscheme
 Plugin 'morhetz/gruvbox'
@@ -1528,7 +1528,7 @@ let g:LanguageClient_hoverPreview = 'Never'
 let g:LanguageClient_hasSnippetSupport = 0
 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+let g:LanguageClient_autoStart = 0
 let g:LanguageClient_autoStop = 1
 nnoremap <leader>rb :LanguageClientStart<CR>
 nnoremap <leader>rs :LanguageClientStop<CR>
