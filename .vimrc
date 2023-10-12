@@ -569,6 +569,7 @@ if has('autocmd')
         " disable auto-comment for c/cpp, lua, javascript, c# and vim-script
         au FileType c,cpp,java,javascript set comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,f://
         au FileType vim set comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",f:\"
+        au FileType todo GitGutterBufferDisable
 
         if has("gui_vimr")
             au FocusGained * checktime
