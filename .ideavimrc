@@ -11,6 +11,7 @@ set ReplaceWithRegister
 set NERDTree
 set exchange
 set textobj-indent
+
 " set matchit
 " set which-key
 

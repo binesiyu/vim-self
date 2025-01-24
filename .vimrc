@@ -1861,4 +1861,6 @@ command! OpenInVSCode exe "silent !code --goto '" . expand("%") . ":" . line("."
 
 " }
 
+vnoremap gl :s/^/\=line('.') - line("'<") + 1 . '.'/<CR>
+
 " vim:ts=4:sw=4:sts=4 et fdm=marker:
