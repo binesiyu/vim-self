@@ -1,0 +1,952 @@
+{
+  "security.workspace.trust.untrustedFiles": "open",
+  "css.validate": false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
+  "editor.fastScrollSensitivity": 3,
+  "editor.fontFamily": "DejaVuSansMono YaHei NF",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.lineHeight": 0,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": true,
+    "other": true,
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "all",
+  "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 4,
+  "emmet.syntaxProfiles": {
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.mjs": "javascript",
+    "Dockerfile-dev": "dockerfile",
+    "Vagrantfile": "ruby",
+    "*.txt": "lua"
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.next": true,
+    "**/.svn": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/vender": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": false, // 禁止自动删除行尾空格
+  "editor.trimAutoWhitespace": false, // 禁止自动删除自动生成的空格
+  "git.autofetch": true,
+  "git.enableCommitSigning": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "DejaVuSansMono YaHei NF",
+  "terminal.integrated.fontSize": 13,
+  "vim.leader": ",",
+  "vim.visualstar": true,
+  "vim.easymotion": true,
+  "vim.replaceWithRegister": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.statusBarColorControl": false,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "after": [
+        "j"
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
+    },
+    {
+      "before": [
+        "f"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "l"
+      ]
+    },
+    {
+      "before": [
+        "F"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "h"
+      ]
+    },
+    {
+      "before": [
+        "t"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "T"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "after": [
+        "*",
+        "N"
+      ]
+    },
+    // 变量符号重命名
+    {
+      "before": [
+        "<leader>",
+        "l",
+        "r"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    // 定义速览
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    // 转到定义
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    // 转到引用
+    // {
+    //   "before": ["g", "r"],
+    //   "commands": ["editor.action.goToReferences"]
+    // },
+    // 转到实现
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    // 全局搜索文件名
+    {
+      "before": [
+        "<C-p>",
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    // 全局搜索文字
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    // 全局搜索文字
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    // 切换最左侧图标面板可见性
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "a"
+      ],
+      "commands": [
+        "workbench.action.toggleActivityBarVisibility"
+      ]
+    },
+    // 打开文件浏览器
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
+    },
+    // 组中上一个标签页
+    {
+      "before": [
+        "H"
+      ],
+      "commands": [
+        "workbench.action.previousEditorInGroup"
+      ]
+    },
+    // 组中下一个标签页
+    {
+      "before": [
+        "L"
+      ],
+      "commands": [
+        "workbench.action.nextEditorInGroup"
+      ]
+    },
+    // 组中上一个标签页
+    {
+      "before": [
+        "<C-h>",
+      ],
+      "commands": [
+        "workbench.action.previousEditorInGroup"
+      ]
+    },
+    // 组中下一个标签页
+    {
+      "before": [
+        "<C-l>",
+      ],
+      "commands": [
+        "workbench.action.nextEditorInGroup"
+      ]
+    },
+    // 移动到上一个标签组
+    {
+      "before": [
+        "<leader>",
+        "H"
+      ],
+      "commands": [
+        "workbench.action.moveEditorToPreviousGroup"
+      ]
+    },
+    // 移动到下一个标签组
+    {
+      "before": [
+        "<leader>",
+        "L"
+      ],
+      "commands": [
+        "workbench.action.moveEditorToNextGroup"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // vim whichkey
+    {
+      "before": [
+        "<leader>",
+        "<leader>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "/"
+      ],
+      "commands": [
+        ":nohl",
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex1",
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+  ],
+  "vim.commandLineModeKeyBindings": [],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "C-a"
+      ],
+      "commands": [
+        "cursorHome"
+      ]
+    },
+    {
+      "before": [
+        "C-e"
+      ],
+      "commands": [
+        "cursorEnd"
+      ]
+    },
+    {
+      "before": [
+        "C-b"
+      ],
+      "after": [
+        "<Left>"
+      ]
+    },
+    {
+      "before": [
+        "C-f"
+      ],
+      "after": [
+        "<Right>"
+      ]
+    },
+    {
+      "before": [
+        "C-d"
+      ],
+      "after": [
+        "<Del>"
+      ]
+    },
+    {
+      "before": [
+        "C-n"
+      ],
+      "after": [
+        "<Down>"
+      ]
+    },
+    {
+      "before": [
+        "C-p"
+      ],
+      "after": [
+        "<Up>"
+      ]
+    }
+  ],
+  "window.openFilesInNewWindow": "off",
+  "workbench.editor.enablePreview": false,
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "references.preferredLocation": "view",
+  "[ruby]": {},
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontSize": 13,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.lineNumbers": "relative",
+  "editor.columnSelection": false,
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "update.mode": "manual",
+  "explorer.confirmDelete": false,
+  "debug.allowBreakpointsEverywhere": true,
+  "whichkey.bindings": [
+    {
+      "key": ",",
+      "name": "Commands...",
+      "type": "command",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "a",
+      "name": "+<localleader>",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "u",
+          "name": "PasteURL",
+          "type": "command",
+          "command": "pasteURL.PasteURL"
+        },
+        {
+          "key": "i",
+          "name": "pasteImage",
+          "type": "command",
+          "command": "extension.pasteImage"
+        },
+      ]
+    },
+    {
+      "key": "b",
+      "name": "+buffers/editors...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "Show all buffers/editors",
+          "type": "command",
+          "command": "workbench.action.showAllEditors"
+        },
+        {
+          "key": "B",
+          "name": "Show all buffers/editors in active group",
+          "type": "command",
+          "command": "workbench.action.showEditorsInActiveGroup"
+        },
+        {
+          "key": "d",
+          "name": "Close active editor",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        {
+          "key": "c",
+          "name": "Close other editors",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "n",
+          "name": "Next editor",
+          "type": "command",
+          "command": "workbench.action.nextEditor"
+        },
+        {
+          "key": "p",
+          "name": "Previous editor",
+          "type": "command",
+          "command": "workbench.action.previousEditor"
+        },
+        {
+          "key": "y",
+          "name": "Copy path of active file",
+          "type": "command",
+          "command": "workbench.action.files.copyPathOfActiveFile"
+        },
+        {
+          "key": "f",
+          "name": "Open file/folder",
+          "type": "command",
+          "command": "workbench.action.files.openFileFolder"
+        },
+        {
+          "key": "n",
+          "name": "New Untitled",
+          "type": "command",
+          "command": "workbench.action.files.newUntitledFile"
+        },
+        {
+          "key": "s",
+          "name": "Save file",
+          "type": "command",
+          "command": "workbench.action.files.save"
+        },
+        {
+          "key": "S",
+          "name": "Save all files",
+          "type": "command",
+          "command": "workbench.action.files.saveAll"
+        },
+        {
+          "key": "r",
+          "name": "Open recent...",
+          "type": "command",
+          "command": "workbench.action.openRecent"
+        },
+        {
+          "key": "R",
+          "name": "Rename file",
+          "type": "commands",
+          "commands": [
+            "workbench.files.action.showActiveFileInExplorer",
+            "renameFile"
+          ]
+        },
+        {
+          "key": "t",
+          "name": "pin current Editor to top ",
+          "type": "command",
+          "command": "workbench.action.pinEditor"
+        },
+        {
+          "key": "T",
+          "name": "unpin Editor",
+          "type": "command",
+          "command": "workbench.action.unpinEditor"
+        },
+        {
+          "key": "l",
+          "name": "Change file language",
+          "type": "command",
+          "command": "workbench.action.editor.changeLanguageMode"
+        },
+        {
+          "key": "=",
+          "name": "Format file",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "H",
+          "name": "Move editor into left group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToLeftGroup"
+        },
+        {
+          "key": "J",
+          "name": "Move editor into below group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToBelowGroup"
+        },
+        {
+          "key": "K",
+          "name": "Move editor into above group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToAboveGroup"
+        },
+        {
+          "key": "L",
+          "name": "Move editor into right group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToRightGroup"
+        }
+      ]
+    },
+    {
+      "key": "n",
+      "name": "+navigation",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "e",
+          "name": "Show explorer",
+          "type": "command",
+          "command": "workbench.view.explorer"
+        },
+        {
+          "key": "s",
+          "name": "Show search",
+          "type": "command",
+          "command": "workbench.view.search"
+        },
+        {
+          "key": "g",
+          "name": "Show source control",
+          "type": "command",
+          "command": "workbench.view.scm"
+        },
+        {
+          "key": "r",
+          "name": "Show remote explorer",
+          "type": "command",
+          "command": "workbench.view.remote"
+        },
+        {
+          "key": "x",
+          "name": "Show extensions",
+          "type": "command",
+          "command": "workbench.view.extensions"
+        },
+        {
+          "key": "t",
+          "name": "Show terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ]
+    },
+    {
+      "key": "o",
+      "name": "+open",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "r",
+          "name": "openRecent...",
+          "type": "command",
+          "command": "workbench.action.openRecent"
+        },
+        {
+          "key": "l",
+          "name": "openLink",
+          "type": "command",
+          "command": "editor.action.openLink"
+        },
+        {
+          "key": "o",
+          "name": "reveal current File In Finder",
+          "type": "command",
+          "command": "revealFileInOS"
+        },
+        {
+          "key": "O",
+          "name": "reveal current File In Finder",
+          "type": "command",
+          "command": "workbench.action.files.revealActiveFileInWindows"
+        },
+      ]
+    },
+    {
+      "key": "s",
+      "name": "+search",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "search in the buffer",
+          "type": "command",
+          "command": "actions.find",
+          "condition": {
+            "when": "sideBarVisible && explorerViewletVisible"
+          }
+        },
+        {
+          "key": "p",
+          "name": "Search project",
+          "type": "command",
+          "command": "workbench.action.findInFiles"
+        },
+        {
+          "key": "P",
+          "name": "Search in a project with a selection",
+          "type": "commands",
+          "commands": [
+            "editor.action.addSelectionToNextFindMatch",
+            "workbench.action.findInFiles"
+          ]
+        },
+        {
+          "key": "s",
+          "name": "Jump to symbol in file",
+          "type": "command",
+          "command": "workbench.action.gotoSymbol"
+        },
+        {
+          "key": "S",
+          "name": "Jump to symbol in workspace",
+          "type": "command",
+          "command": "workbench.action.showAllSymbols"
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "+window",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "-",
+          "name": "Split editor below",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "/",
+          "name": "Split editor right",
+          "type": "command",
+          "command": "workbench.action.splitEditor"
+        },
+        {
+          "key": "s",
+          "name": "Split editor below",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "v",
+          "name": "Split editor right",
+          "type": "command",
+          "command": "workbench.action.splitEditor"
+        },
+        {
+          "key": "=",
+          "name": "Reset editor group sizes",
+          "type": "command",
+          "command": "workbench.action.evenEditorWidths"
+        },
+        {
+          "key": "t",
+          "name": "Toggle editor group sizes",
+          "type": "command",
+          "command": "workbench.action.toggleEditorWidths"
+        },
+        {
+          "key": "n",
+          "name": "Open active in new window",
+          "type": "command",
+          "command": "workbench.action.files.showOpenedFileInNewWindow"
+        },
+        {
+          "key": "w",
+          "name": "Switch window",
+          "type": "command",
+          "command": "workbench.action.switchWindow"
+        },
+        {
+          "key": "h",
+          "name": "Move editor left",
+          "type": "command",
+          "command": "workbench.action.focusPreviousGroup"
+        },
+        {
+          "key": "j",
+          "name": "Move editor down",
+          "type": "command",
+          "command": "workbench.action.focusBelowGroup"
+        },
+        {
+          "key": "k",
+          "name": "Move editor up",
+          "type": "command",
+          "command": "workbench.action.focusAboveGroup"
+        },
+        {
+          "key": "l",
+          "name": "Move editor right",
+          "type": "command",
+          "command": "workbench.action.focusNextGroup"
+        },
+        {
+          "key": "H",
+          "name": "Move editor group left",
+          "type": "command",
+          "command": "workbench.action.moveActiveEditorGroupLeft"
+        },
+        {
+          "key": "J",
+          "name": "Move editor group down",
+          "type": "command",
+          "command": "workbench.action.moveActiveEditorGroupDown"
+        },
+        {
+          "key": "K",
+          "name": "Move editor group up",
+          "type": "command",
+          "command": "workbench.action.moveActiveEditorGroupUp"
+        },
+        {
+          "key": "L",
+          "name": "Move editor group right",
+          "type": "command",
+          "command": "workbench.action.moveActiveEditorGroupRight"
+        },
+        {
+          "key": "m",
+          "name": "Maximize editor group",
+          "type": "command",
+          "command": "workbench.action.minimizeOtherEditors"
+        },
+        {
+          "key": "M",
+          "name": "Maximize editor group and hide side bar",
+          "type": "command",
+          "command": "workbench.action.maximizeEditor"
+        },
+        {
+          "key": "z",
+          "name": "Combine all editors",
+          "type": "command",
+          "command": "workbench.action.joinAllGroups"
+        },
+        {
+          "key": "d",
+          "name": "Close editor group",
+          "type": "command",
+          "command": "workbench.action.closeEditorsInGroup"
+        },
+        {
+          "key": "x",
+          "name": "Close all editor groups",
+          "type": "command",
+          "command": "workbench.action.closeAllGroups"
+        },
+      ]
+    },
+    {
+      "key": "t",
+      "name": "+toggle",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "u",
+          "name": "To lower case",
+          "type": "command",
+          "command": "editor.action.transformToLowercase"
+        },
+        {
+          "key": "U",
+          "name": "To upper case",
+          "type": "command",
+          "command": "editor.action.transformToUppercase"
+        },
+        {
+          "key": "i",
+          "name": "Organize Imports",
+          "type": "command",
+          "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "R",
+          "name": "Refactor",
+          "type": "command",
+          "command": "editor.action.refactor"
+        },
+        {
+          "key": ".",
+          "name": "Quick fix",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "a",
+          "name": "Find all references",
+          "type": "command",
+          "command": "editor.action.referenceSearch.trigger"
+        },
+      ]
+    },
+    {
+      "key": "1",
+      "name": "openEditorAtIndex1",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex1"
+    },
+    {
+      "key": "2",
+      "name": "openEditorAtIndex2",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex2"
+    },
+    {
+      "key": "3",
+      "name": "openEditorAtIndex3",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex3"
+    },
+    {
+      "key": "4",
+      "name": "openEditorAtIndex4",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex4"
+    },
+    {
+      "key": "5",
+      "name": "openEditorAtIndex5",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex5"
+    },
+    {
+      "key": "6",
+      "name": "openEditorAtIndex6",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex6"
+    },
+    {
+      "key": "7",
+      "name": "openEditorAtIndex7",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex7"
+    },
+    {
+      "key": "8",
+      "name": "openEditorAtIndex8",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex8"
+    },
+    {
+      "key": "9",
+      "name": "openEditorAtIndex9",
+      "type": "command",
+      "command": "workbench.action.openEditorAtIndex9"
+    },
+  ],
+}
