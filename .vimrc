@@ -224,7 +224,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.vim'
 
 " todo-vim
-Plugin 'freitass/todo.txt-vim'
+Plugin 'binesiyu/todo.txt-vim'
 " lua
 Plugin 'binesiyu/vim-quick-community'
 
